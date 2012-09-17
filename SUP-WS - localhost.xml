@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="SUP WS" soapui-version="4.0.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UserPortBinding" type="wsdl" bindingName="{http://tobias.com}UserPortBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8090/supwsuser/UserPortInterface?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8090/supwsuser/UserPortInterface?wsdl"><con:part><con:url>http://localhost:8090/supwsuser/UserPortInterface?wsdl</con:url><con:content><![CDATA[<definitions name="User" targetNamespace="http://tobias.com" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tobias.com" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://tobias.com" schemaLocation="http://localhost:8090/supwsuser/UserPortInterface?xsd=xsd1"/>
+    </xsd:schema>
+  </types>
+  <message name="createUser">
+    <part element="tns:createUser" name="parameters"></part>
+  </message>
+  <message name="getUser">
+    <part element="tns:getUser" name="parameters"></part>
+  </message>
+  <message name="getUsersResponse">
+    <part element="tns:getUsersResponse" name="parameters"></part>
+  </message>
+  <message name="deleteUserResponse">
+    <part element="tns:deleteUserResponse" name="parameters"></part>
+  </message>
+  <message name="getUsers">
+    <part element="tns:getUsers" name="parameters"></part>
+  </message>
+  <message name="getUserResponse">
+    <part element="tns:getUserResponse" name="parameters"></part>
+  </message>
+  <message name="deleteUser">
+    <part element="tns:deleteUser" name="parameters"></part>
+  </message>
+  <message name="createUserResponse">
+    <part element="tns:createUserResponse" name="parameters"></part>
+  </message>
+  <portType name="UserPortType">
+    <operation name="getUsers">
+      <input message="tns:getUsers" wsam:Action="http://tobias.com/UserPortType/getUsersRequest"></input>
+      <output message="tns:getUsersResponse" wsam:Action="http://tobias.com/UserPortType/getUsersResponse"></output>
+    </operation>
+    <operation name="getUser">
+      <input message="tns:getUser" wsam:Action="http://tobias.com/UserPortType/getUserRequest"></input>
+      <output message="tns:getUserResponse" wsam:Action="http://tobias.com/UserPortType/getUserResponse"></output>
+    </operation>
+    <operation name="createUser">
+      <input message="tns:createUser" wsam:Action="http://tobias.com/UserPortType/createUserRequest"></input>
+      <output message="tns:createUserResponse" wsam:Action="http://tobias.com/UserPortType/createUserResponse"></output>
+    </operation>
+    <operation name="deleteUser">
+      <input message="tns:deleteUser" wsam:Action="http://tobias.com/UserPortType/deleteUserRequest"></input>
+      <output message="tns:deleteUserResponse" wsam:Action="http://tobias.com/UserPortType/deleteUserResponse"></output>
+    </operation>
+  </portType>
+  <binding name="UserPortBinding" type="tns:UserPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getUsers">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="User">
+    <port binding="tns:UserPortBinding" name="UserPort">
+      <soap:address location="http://localhost:8090/supwsuser/UserPortInterface"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8090/supwsuser/UserPortInterface?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://tobias.com" version="1.0" xmlns:tns="http://tobias.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="createUser" type="tns:createUser"/>
+  <xs:element name="createUserResponse" type="tns:createUserResponse"/>
+  <xs:element name="deleteUser" type="tns:deleteUser"/>
+  <xs:element name="deleteUserResponse" type="tns:deleteUserResponse"/>
+  <xs:element name="getUser" type="tns:getUser"/>
+  <xs:element name="getUserResponse" type="tns:getUserResponse"/>
+  <xs:element name="getUsers" type="tns:getUsers"/>
+  <xs:element name="getUsersResponse" type="tns:getUsersResponse"/>
+  <xs:complexType name="createUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" type="xs:string"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createUserResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getUser">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteUser">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteUserResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getUsers">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getUsersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:user"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="createUser" bindingOperationName="createUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>test</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>test</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/UserPortType/createUserRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteUser" bindingOperationName="deleteUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:deleteUser>
+         <arg0>?</arg0>
+      </tob:deleteUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/UserPortType/deleteUserRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getUser" bindingOperationName="getUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getUser>
+         <arg0>3</arg0>
+      </tob:getUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/UserPortType/getUserRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getUsers" bindingOperationName="getUsers" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getUsers/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/UserPortType/getUsersRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ProductPortBinding" type="wsdl" bindingName="{http://tobias.com}ProductPortBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8090/supwsproduct/ProductPortInterface?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8090/supwsproduct/ProductPortInterface?wsdl"><con:part><con:url>http://localhost:8090/supwsproduct/ProductPortInterface?wsdl</con:url><con:content><![CDATA[<definitions name="Product" targetNamespace="http://tobias.com" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tobias.com" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://tobias.com" schemaLocation="http://localhost:8090/supwsproduct/ProductPortInterface?xsd=xsd1"/>
+    </xsd:schema>
+  </types>
+  <message name="changeProduct">
+    <part element="tns:changeProduct" name="parameters"></part>
+  </message>
+  <message name="changeProductResponse">
+    <part element="tns:changeProductResponse" name="parameters"></part>
+  </message>
+  <message name="deleteProductResponse">
+    <part element="tns:deleteProductResponse" name="parameters"></part>
+  </message>
+  <message name="deleteProduct">
+    <part element="tns:deleteProduct" name="parameters"></part>
+  </message>
+  <message name="getAllProductsResponse">
+    <part element="tns:getAllProductsResponse" name="parameters"></part>
+  </message>
+  <message name="createProductResponse">
+    <part element="tns:createProductResponse" name="parameters"></part>
+  </message>
+  <message name="getProductResponse">
+    <part element="tns:getProductResponse" name="parameters"></part>
+  </message>
+  <message name="getProduct">
+    <part element="tns:getProduct" name="parameters"></part>
+  </message>
+  <message name="getAllProducts">
+    <part element="tns:getAllProducts" name="parameters"></part>
+  </message>
+  <message name="createProduct">
+    <part element="tns:createProduct" name="parameters"></part>
+  </message>
+  <portType name="ProductPortType">
+    <operation name="createProduct">
+      <input message="tns:createProduct" wsam:Action="http://tobias.com/ProductPortType/createProductRequest"></input>
+      <output message="tns:createProductResponse" wsam:Action="http://tobias.com/ProductPortType/createProductResponse"></output>
+    </operation>
+    <operation name="deleteProduct">
+      <input message="tns:deleteProduct" wsam:Action="http://tobias.com/ProductPortType/deleteProductRequest"></input>
+      <output message="tns:deleteProductResponse" wsam:Action="http://tobias.com/ProductPortType/deleteProductResponse"></output>
+    </operation>
+    <operation name="changeProduct">
+      <input message="tns:changeProduct" wsam:Action="http://tobias.com/ProductPortType/changeProductRequest"></input>
+      <output message="tns:changeProductResponse" wsam:Action="http://tobias.com/ProductPortType/changeProductResponse"></output>
+    </operation>
+    <operation name="getAllProducts">
+      <input message="tns:getAllProducts" wsam:Action="http://tobias.com/ProductPortType/getAllProductsRequest"></input>
+      <output message="tns:getAllProductsResponse" wsam:Action="http://tobias.com/ProductPortType/getAllProductsResponse"></output>
+    </operation>
+    <operation name="getProduct">
+      <input message="tns:getProduct" wsam:Action="http://tobias.com/ProductPortType/getProductRequest"></input>
+      <output message="tns:getProductResponse" wsam:Action="http://tobias.com/ProductPortType/getProductResponse"></output>
+    </operation>
+  </portType>
+  <binding name="ProductPortBinding" type="tns:ProductPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createProduct">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteProduct">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="changeProduct">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllProducts">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProduct">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Product">
+    <port binding="tns:ProductPortBinding" name="ProductPort">
+      <soap:address location="http://localhost:8090/supwsproduct/ProductPortInterface"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8090/supwsproduct/ProductPortInterface?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://tobias.com" version="1.0" xmlns:tns="http://tobias.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="changeProduct" type="tns:changeProduct"/>
+  <xs:element name="changeProductResponse" type="tns:changeProductResponse"/>
+  <xs:element name="createProduct" type="tns:createProduct"/>
+  <xs:element name="createProductResponse" type="tns:createProductResponse"/>
+  <xs:element name="deleteProduct" type="tns:deleteProduct"/>
+  <xs:element name="deleteProductResponse" type="tns:deleteProductResponse"/>
+  <xs:element name="getAllProducts" type="tns:getAllProducts"/>
+  <xs:element name="getAllProductsResponse" type="tns:getAllProductsResponse"/>
+  <xs:element name="getProduct" type="tns:getProduct"/>
+  <xs:element name="getProductResponse" type="tns:getProductResponse"/>
+  <xs:complexType name="deleteProduct">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteProductResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element name="price" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeProductResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllProducts">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getAllProductsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element name="arg1" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createProductResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProduct">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProductResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="changeProduct" bindingOperationName="changeProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:changeProduct>
+         <!--Optional:-->
+         <arg0>
+            <id>?</id>
+            <!--Optional:-->
+            <name>?</name>
+            <price>?</price>
+         </arg0>
+      </tob:changeProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/ProductPortType/changeProductRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createProduct" bindingOperationName="createProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Product B</arg0>
+         <arg1>11,67</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/ProductPortType/createProductRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteProduct" bindingOperationName="deleteProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:deleteProduct>
+         <arg0>53</arg0>
+      </tob:deleteProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/ProductPortType/deleteProductRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllProducts" bindingOperationName="getAllProducts" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getAllProducts/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/ProductPortType/getAllProductsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProduct" bindingOperationName="getProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getProduct>
+         <arg0>3</arg0>
+      </tob:getProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/ProductPortType/getProductRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="OrderPortBinding" type="wsdl" bindingName="{http://tobias.com}OrderPortBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8090/supwsorder/OrderPortInterface?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8090/supwsorder/OrderPortInterface?wsdl"><con:part><con:url>http://localhost:8090/supwsorder/OrderPortInterface?wsdl</con:url><con:content><![CDATA[<definitions name="Order" targetNamespace="http://tobias.com" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tobias.com" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://tobias.com" schemaLocation="http://localhost:8090/supwsorder/OrderPortInterface?xsd=xsd1"/>
+    </xsd:schema>
+  </types>
+  <message name="getOrdersResponse">
+    <part element="tns:getOrdersResponse" name="parameters"></part>
+  </message>
+  <message name="getOrdersForProduct">
+    <part element="tns:getOrdersForProduct" name="parameters"></part>
+  </message>
+  <message name="deleteOrderResponse">
+    <part element="tns:deleteOrderResponse" name="parameters"></part>
+  </message>
+  <message name="deleteOrder">
+    <part element="tns:deleteOrder" name="parameters"></part>
+  </message>
+  <message name="createOrderResponse">
+    <part element="tns:createOrderResponse" name="parameters"></part>
+  </message>
+  <message name="getOrdersForUserResponse">
+    <part element="tns:getOrdersForUserResponse" name="parameters"></part>
+  </message>
+  <message name="getOrder">
+    <part element="tns:getOrder" name="parameters"></part>
+  </message>
+  <message name="getOrders">
+    <part element="tns:getOrders" name="parameters"></part>
+  </message>
+  <message name="createOrder">
+    <part element="tns:createOrder" name="parameters"></part>
+  </message>
+  <message name="getOrdersForUser">
+    <part element="tns:getOrdersForUser" name="parameters"></part>
+  </message>
+  <message name="getOrdersForProductResponse">
+    <part element="tns:getOrdersForProductResponse" name="parameters"></part>
+  </message>
+  <message name="getOrderResponse">
+    <part element="tns:getOrderResponse" name="parameters"></part>
+  </message>
+  <portType name="OrderPortType">
+    <operation name="getOrdersForUser">
+      <input message="tns:getOrdersForUser" wsam:Action="http://tobias.com/OrderPortType/getOrdersForUserRequest"></input>
+      <output message="tns:getOrdersForUserResponse" wsam:Action="http://tobias.com/OrderPortType/getOrdersForUserResponse"></output>
+    </operation>
+    <operation name="createOrder">
+      <input message="tns:createOrder" wsam:Action="http://tobias.com/OrderPortType/createOrderRequest"></input>
+      <output message="tns:createOrderResponse" wsam:Action="http://tobias.com/OrderPortType/createOrderResponse"></output>
+    </operation>
+    <operation name="getOrdersForProduct">
+      <input message="tns:getOrdersForProduct" wsam:Action="http://tobias.com/OrderPortType/getOrdersForProductRequest"></input>
+      <output message="tns:getOrdersForProductResponse" wsam:Action="http://tobias.com/OrderPortType/getOrdersForProductResponse"></output>
+    </operation>
+    <operation name="deleteOrder">
+      <input message="tns:deleteOrder" wsam:Action="http://tobias.com/OrderPortType/deleteOrderRequest"></input>
+      <output message="tns:deleteOrderResponse" wsam:Action="http://tobias.com/OrderPortType/deleteOrderResponse"></output>
+    </operation>
+    <operation name="getOrders">
+      <input message="tns:getOrders" wsam:Action="http://tobias.com/OrderPortType/getOrdersRequest"></input>
+      <output message="tns:getOrdersResponse" wsam:Action="http://tobias.com/OrderPortType/getOrdersResponse"></output>
+    </operation>
+    <operation name="getOrder">
+      <input message="tns:getOrder" wsam:Action="http://tobias.com/OrderPortType/getOrderRequest"></input>
+      <output message="tns:getOrderResponse" wsam:Action="http://tobias.com/OrderPortType/getOrderResponse"></output>
+    </operation>
+  </portType>
+  <binding name="OrderPortBinding" type="tns:OrderPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getOrdersForUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createOrder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getOrdersForProduct">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteOrder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getOrders">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getOrder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Order">
+    <port binding="tns:OrderPortBinding" name="OrderPort">
+      <soap:address location="http://localhost:8090/supwsorder/OrderPortInterface"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8090/supwsorder/OrderPortInterface?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://tobias.com" version="1.0" xmlns:tns="http://tobias.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="createOrder" type="tns:createOrder"/>
+  <xs:element name="createOrderResponse" type="tns:createOrderResponse"/>
+  <xs:element name="deleteOrder" type="tns:deleteOrder"/>
+  <xs:element name="deleteOrderResponse" type="tns:deleteOrderResponse"/>
+  <xs:element name="getOrder" type="tns:getOrder"/>
+  <xs:element name="getOrderResponse" type="tns:getOrderResponse"/>
+  <xs:element name="getOrders" type="tns:getOrders"/>
+  <xs:element name="getOrdersForProduct" type="tns:getOrdersForProduct"/>
+  <xs:element name="getOrdersForProductResponse" type="tns:getOrdersForProductResponse"/>
+  <xs:element name="getOrdersForUser" type="tns:getOrdersForUser"/>
+  <xs:element name="getOrdersForUserResponse" type="tns:getOrdersForUserResponse"/>
+  <xs:element name="getOrdersResponse" type="tns:getOrdersResponse"/>
+  <xs:complexType name="deleteOrder">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteOrderResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrdersForProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrdersForProductResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:order"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="order">
+    <xs:sequence>
+      <xs:element name="orderid" type="xs:int"/>
+      <xs:element name="productId" type="xs:int"/>
+      <xs:element name="userId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrders">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getOrdersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:order"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createOrder">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createOrderResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrdersForUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrdersForUserResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:order"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrder">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:order"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="createOrder" bindingOperationName="createOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>2</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/createOrderRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteOrder" bindingOperationName="deleteOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:deleteOrder>
+         <arg0>?</arg0>
+      </tob:deleteOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/deleteOrderRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getOrders" bindingOperationName="getOrders" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrders/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/getOrdersRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getOrdersForProduct" bindingOperationName="getOrdersForProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrdersForProduct>
+         <!--Optional:-->
+         <arg0>1</arg0>
+      </tob:getOrdersForProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/getOrdersForProductRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getOrdersForUser" bindingOperationName="getOrdersForUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrdersForUser>
+         <!--Optional:-->
+         <arg0>3</arg0>
+      </tob:getOrdersForUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/getOrdersForUserRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getOrder" bindingOperationName="getOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrder>
+         <arg0>2</arg0>
+      </tob:getOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/getOrderRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="User TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createUser TestCase" searchProperties="true" id="0de7aff0-f3b6-42dc-8010-2b42d9595ba2"><con:settings/><con:testStep type="request" name="createUser"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Rio de Janeiro</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Tobias</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Sao Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Henrique</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Sao Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Fabiobias</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>São Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Marlo</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>São Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Raquel</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Porto Alegre</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Paulo</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="deleteUser TestCase" searchProperties="true" id="5ff9795d-2bd3-4ff2-a628-d2cfb788e293"><con:settings/><con:testStep type="request" name="deleteUser"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>deleteUser</con:operation><con:request name="deleteUser"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:deleteUser>
+         <arg0>?</arg0>
+      </tob:deleteUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig action="http://tobias.com/UserPortType/deleteUserRequest"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getUser TestCase" searchProperties="true" id="6f7f1697-7772-4775-836e-b82eb8b70fd3"><con:settings/><con:testStep type="request" name="getUser"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>getUser</con:operation><con:request name="getUser"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getUser>
+         <arg0>3</arg0>
+      </tob:getUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/getUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getUsers TestCase" searchProperties="true" id="36fac61d-a436-4b53-bb3b-607f56f0f511"><con:settings/><con:testStep type="request" name="getUsers"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>getUsers</con:operation><con:request name="getUsers"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getUsers/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/getUsersRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="Product TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="changeProduct TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="changeProduct"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>changeProduct</con:operation><con:request name="changeProduct"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:changeProduct>
+         <!--Optional:-->
+         <arg0>
+            <id>?</id>
+            <!--Optional:-->
+            <name>?</name>
+            <price>?</price>
+         </arg0>
+      </tob:changeProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig action="http://tobias.com/ProductPortType/changeProductRequest"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createProduct TestCase" searchProperties="true" id="2dd189c4-dcca-4ad3-8291-c9ca6c4fbd24"><con:settings/><con:testStep type="request" name="createProduct"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Laptop</arg0>
+         <arg1>1132,56</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Galaxy Note</arg0>
+         <arg1>1200,00</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Coffee</arg0>
+         <arg1>55,76</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Bag</arg0>
+         <arg1>11,56</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Suit</arg0>
+         <arg1>2004,99</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Juice</arg0>
+         <arg1>4,95</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Car</arg0>
+         <arg1>47389,22</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 8"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Table</arg0>
+         <arg1>887,00</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 10"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 10"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Ticket</arg0>
+         <arg1>2499,95</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="deleteProduct TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="deleteProduct"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>deleteProduct</con:operation><con:request name="deleteProduct"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:deleteProduct>
+         <arg0>?</arg0>
+      </tob:deleteProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig action="http://tobias.com/ProductPortType/deleteProductRequest"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getAllProducts TestCase" searchProperties="true" id="2ff17a17-7d87-4218-9cad-a03a91c3b961"><con:settings/><con:testStep type="request" name="getAllProducts"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>getAllProducts</con:operation><con:request name="getAllProducts"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getAllProducts/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/getAllProductsRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getProduct TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="getProduct - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>getProduct</con:operation><con:request name="getProduct - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getProduct>
+         <arg0>3</arg0>
+      </tob:getProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/ProductPortType/getProductRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="Order TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createOrder TestCase" searchProperties="true" id="dddc50b0-625a-4250-bd68-dbd57493d46e"><con:settings/><con:testStep type="request" name="createOrder"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>2</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>5</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>1</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>2</arg0>
+         <arg1>4</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>5</arg0>
+         <arg1>4</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="deleteOrder TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="deleteOrder"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>deleteOrder</con:operation><con:request name="deleteOrder"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:deleteOrder>
+         <arg0>?</arg0>
+      </tob:deleteOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig action="http://tobias.com/OrderPortType/deleteOrderRequest"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getOrders TestCase" searchProperties="true" id="5652fb68-f275-44e8-b822-31277ee23f6b"><con:settings/><con:testStep type="request" name="getOrders"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>getOrders</con:operation><con:request name="getOrders"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrders/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/getOrdersRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getOrdersForProduct TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="getOrdersForProduct 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>getOrdersForProduct</con:operation><con:request name="getOrdersForProduct 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrdersForProduct>
+         <!--Optional:-->
+         <arg0>2</arg0>
+      </tob:getOrdersForProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/getOrdersForProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getOrdersForProduct 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>getOrdersForProduct</con:operation><con:request name="getOrdersForProduct 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrdersForProduct>
+         <!--Optional:-->
+         <arg0>5</arg0>
+      </tob:getOrdersForProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/getOrdersForProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getOrdersForProduct 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>getOrdersForProduct</con:operation><con:request name="getOrdersForProduct 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrdersForProduct>
+         <!--Optional:-->
+         <arg0>5</arg0>
+      </tob:getOrdersForProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/getOrdersForProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getOrdersForUser TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="getOrdersForUser 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>getOrdersForUser</con:operation><con:request name="getOrdersForUser 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrdersForUser>
+         <!--Optional:-->
+         <arg0>3</arg0>
+      </tob:getOrdersForUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/getOrdersForUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getOrder TestCase" searchProperties="true" id="0b78c6b7-25cc-4e45-8eee-445bf987b53d"><con:settings/><con:testStep type="request" name="getOrder - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>getOrder</con:operation><con:request name="getOrder - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:getOrder>
+         <arg0>2</arg0>
+      </tob:getOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tobias.com/OrderPortType/getOrderRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="InitialCreate"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createUser" searchProperties="true" id="e93f1671-6cf7-4de1-ae08-439b8bdd7220"><con:settings/><con:testStep type="request" name="createUser"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Rio de Janeiro</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Tobias</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Sao Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Henrique</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Sao Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Fabiobias</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>São Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Marlo</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>São Paulo</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Raquel</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createUser 6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserPortBinding</con:interface><con:operation>createUser</con:operation><con:request name="createUser 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsuser/UserPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createUser>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <city>Porto Alegre</city>
+            <id>0</id>
+            <!--Optional:-->
+            <userName>Paulo</userName>
+         </arg0>
+      </tob:createUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/UserPortType/createUserRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createProduct" searchProperties="true" id="f72b9598-c62c-47be-b8be-915ca822581d"><con:settings/><con:testStep type="request" name="createProduct"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Laptop</arg0>
+         <arg1>1132,56</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Galaxy Note</arg0>
+         <arg1>1200,00</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Coffee</arg0>
+         <arg1>55,76</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Bag</arg0>
+         <arg1>11,56</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Suit</arg0>
+         <arg1>2004,99</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Juice</arg0>
+         <arg1>4,95</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Car</arg0>
+         <arg1>47389,22</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 8"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Table</arg0>
+         <arg1>887,00</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createProduct 10"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ProductPortBinding</con:interface><con:operation>createProduct</con:operation><con:request name="createProduct 10"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsproduct/ProductPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createProduct>
+         <!--Optional:-->
+         <arg0>Ticket</arg0>
+         <arg1>2499,95</arg1>
+      </tob:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/ProductPortType/createProductRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createOrder" searchProperties="true" id="36895cd7-21a0-4b8e-a40d-1ebc36391f85"><con:settings/><con:testStep type="request" name="createOrder"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>2</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>5</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>1</arg0>
+         <arg1>3</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>2</arg0>
+         <arg1>4</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createOrder 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderPortBinding</con:interface><con:operation>createOrder</con:operation><con:request name="createOrder 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/supwsorder/OrderPortInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tob="http://tobias.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tob:createOrder>
+         <arg0>5</arg0>
+         <arg1>4</arg1>
+      </tob:createOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tobias.com/OrderPortType/createOrderRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

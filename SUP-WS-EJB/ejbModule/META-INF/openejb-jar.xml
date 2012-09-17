@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ejb:openejb-jar xmlns:app="http://geronimo.apache.org/xml/ns/j2ee/application-2.0" xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:client="http://geronimo.apache.org/xml/ns/j2ee/application-client-2.0" xmlns:conn="http://geronimo.apache.org/xml/ns/j2ee/connector-1.2" xmlns:dep="http://geronimo.apache.org/xml/ns/deployment-1.2" xmlns:ejb="http://openejb.apache.org/xml/ns/openejb-jar-2.2" xmlns:jaspi="http://geronimo.apache.org/xml/ns/geronimo-jaspi" xmlns:log="http://geronimo.apache.org/xml/ns/loginconfig-2.0" xmlns:name="http://geronimo.apache.org/xml/ns/naming-1.2" xmlns:pers="http://java.sun.com/xml/ns/persistence" xmlns:pkgen="http://openejb.apache.org/xml/ns/pkgen-2.1" xmlns:sec="http://geronimo.apache.org/xml/ns/security-2.0" xmlns:web="http://geronimo.apache.org/xml/ns/j2ee/web-2.0.1">
+    <dep:environment>
+        <dep:moduleId>
+            <dep:groupId>SUPWS</dep:groupId>
+            <dep:artifactId>EJB</dep:artifactId>
+            <dep:version>1.0</dep:version>
+            <dep:type>car</dep:type>
+        </dep:moduleId>
+        <dep:dependencies>
+            <dep:dependency>
+                <dep:groupId>console.dbpool</dep:groupId>
+                <dep:artifactId>SUPWSDB</dep:artifactId>
+            </dep:dependency>
+             <dep:dependency>
+                <dep:groupId>console.dbpool</dep:groupId>
+                <dep:artifactId>NoTxSUPWSDB</dep:artifactId>
+            </dep:dependency>
+        </dep:dependencies>
+    </dep:environment>
+    <ejb:enterprise-beans>
+        <ejb:session>
+            <ejb:ejb-name>OrderBean</ejb:ejb-name>
+            <ejb:web-service-address>supwsorder</ejb:web-service-address>
+        </ejb:session>
+        <ejb:session>
+            <ejb:ejb-name>ProductBean</ejb:ejb-name>
+            <ejb:web-service-address>supwsproduct</ejb:web-service-address>
+        </ejb:session>
+        <ejb:session>
+            <ejb:ejb-name>UserBean</ejb:ejb-name>
+            <ejb:web-service-address>supwsuser</ejb:web-service-address>
+        </ejb:session>
+    </ejb:enterprise-beans>
+</ejb:openejb-jar>
